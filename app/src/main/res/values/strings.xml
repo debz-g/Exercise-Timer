@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Exercise Timer</string>
+
+    <!-- Tabs -->
+    <string name="tab_timer">Timer</string>
+    <string name="tab_reminder">Reminder</string>
+
+    <!-- Timer -->
+    <string name="every_label">Beep every</string>
+    <string name="round_label">Round %1$d</string>
+    <string name="unit_seconds">seconds</string>
+    <string name="unit_minutes">minutes</string>
+    <string name="idle_caption">Pick how often to beep, then press Start</string>
+    <string name="running_caption">Beeping every %1$s until you press Stop</string>
+    <string name="section_interval">Choose time</string>
+    <string name="custom">Custom…</string>
+    <string name="custom_selected">Custom · %1$s</string>
+    <string name="sleep_timer">Sleep timer</string>
+    <string name="sleep_timer_subtitle">Stop by itself after 1 hour</string>
+    <string name="sleep_timer_ended">The sleep timer stopped the timer after 1 hour</string>
+    <string name="live_updates_title">Show on lock screen</string>
+    <string name="live_updates_subtitle">See the countdown and Stop without opening the app</string>
+    <string name="action_turn_on">Turn on</string>
+    <string name="action_start">Start</string>
+    <string name="action_stop">Stop</string>
+    <string name="cd_countdown_running">%1$d seconds left, round %2$d</string>
+    <string name="cd_countdown_idle">Beeps every %1$s</string>
+
+    <plurals name="seconds_short">
+        <item quantity="one">%d sec</item>
+        <item quantity="other">%d sec</item>
+    </plurals>
+    <plurals name="minutes_short">
+        <item quantity="one">%d min</item>
+        <item quantity="other">%d min</item>
+    </plurals>
+    <plurals name="seconds">
+        <item quantity="one">%d second</item>
+        <item quantity="other">%d seconds</item>
+    </plurals>
+    <plurals name="minutes">
+        <item quantity="one">%d minute</item>
+        <item quantity="other">%d minutes</item>
+    </plurals>
+    <string name="interval_min_sec">%1$d min %2$d sec</string>
+    <plurals name="sleep_timer_left">
+        <item quantity="one">Stops in %d minute</item>
+        <item quantity="other">Stops in %d minutes</item>
+    </plurals>
+
+    <!-- Custom interval -->
+    <string name="custom_title">Custom time</string>
+    <string name="custom_minutes">Minutes</string>
+    <string name="custom_seconds">Seconds</string>
+    <string name="custom_seconds_error">0 to 59</string>
+    <string name="custom_confirm">Use %1$s</string>
+    <string name="custom_confirm_empty">Enter a time</string>
+
+    <!-- Reminder -->
+    <string name="section_daily">Every day</string>
+    <string name="reminder_title">Daily reminder</string>
+    <string name="reminder_on">On: you\'ll get a notification</string>
+    <string name="reminder_off">Off</string>
+    <string name="reminder_time">Reminder time</string>
+    <string name="reminder_time_subtitle">Tap to change</string>
+    <string name="reminder_saved">Reminder set for %1$s every day</string>
+    <string name="section_check">Check it works</string>
+    <string name="test_reminder">Send a test reminder</string>
+    <string name="test_reminder_subtitle">Shows the notification now</string>
+    <string name="reminder_footer">The reminder comes as a notification at the same time every day, even after the phone restarts.</string>
+    <string name="notifications_off_title">Notifications are off</string>
+    <string name="notifications_off_subtitle">Reminders can\'t be shown</string>
+    <string name="action_allow">Allow</string>
+    <string name="action_save">Save</string>
+
+    <!-- Notifications -->
+    <string name="channel_timer">Running timer</string>
+    <string name="channel_timer_description">Shown while the exercise timer is beeping</string>
+    <string name="channel_reminder">Daily reminder</string>
+    <string name="channel_reminder_description">Your daily reminder to exercise</string>
+    <string name="notification_timer_title">Exercise timer · Round %1$d</string>
+    <string name="notification_timer_chip">Round %1$d</string>
+    <string name="notification_timer_text">Beeping every %1$s</string>
+    <string name="notification_timer_sleep">stops in %1$d min</string>
+    <string name="notification_reminder_title">Time to exercise!</string>
+    <string name="notification_reminder_text">Tap to open your exercise timer</string>
+</resources>

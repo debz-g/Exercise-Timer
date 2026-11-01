@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Heartbeat timer: a stopwatch ring with a pulse line through it. Scaled to sit inside the
+     adaptive icon's 66dp safe zone. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:pivotX="54"
+        android:pivotY="54"
+        android:scaleX="0.82"
+        android:scaleY="0.82"
+        android:translateY="-2">
+        <!-- Crown -->
+        <path
+            android:pathData="M49.5,21.5 L58.5,21.5"
+            android:strokeColor="@color/launcher_foreground"
+            android:strokeWidth="7"
+            android:strokeLineCap="round" />
+        <!-- Ring -->
+        <path
+            android:pathData="M54,30 A28,28 0 1,1 54,86 A28,28 0 1,1 54,30 Z"
+            android:strokeColor="@color/launcher_foreground"
+            android:strokeWidth="8" />
+        <!-- Pulse -->
+        <path
+            android:pathData="M30,60 L42,60 L48,48 L56,72 L62,56 L78,56"
+            android:strokeColor="@color/launcher_pulse"
+            android:strokeWidth="6"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+    </group>
+</vector>

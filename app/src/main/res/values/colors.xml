@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ObsidianNeutrals.Dark background, so launch never flashes white. -->
+    <color name="window_background">#FF131316</color>
+    <!-- ObsidianAccent.Emerald -->
+    <color name="launcher_background">#FF131316</color>
+    <color name="launcher_foreground">#FF21D07A</color>
+    <!-- ObsidianAccent.Emerald light -->
+    <color name="launcher_pulse">#FF8DF3B7</color>
+</resources>
