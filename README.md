@@ -47,11 +47,13 @@ Maven repository, already declared in `settings.gradle.kts`.
 ./gradlew :app:testDebugUnitTest    # unit tests: countdown math, timer engine, reminder scheduling
 ./gradlew :app:verifyDesignRules    # fails if UI bypasses Obsidian (also runs in ./gradlew check)
 ./gradlew :app:assembleRelease      # R8-shrunk release APK
+./gradlew :app:releaseApk -PversionCode=2 -PversionName=1.1   # release APK + copy in the project root
 ```
 
-`assembleRelease` signs with `keystore.properties` and `release.jks` in the project root. Both are
-gitignored, so a fresh clone falls back to the debug key. Keep the same release key across versions —
-Android will not install an update signed with a different one.
+`assembleRelease` and `releaseApk` sign with `keystore.properties` and `release.jks` in the project root.
+Both are gitignored, so a fresh clone falls back to the debug key. Keep the same release key across
+versions — Android will not install an update signed with a different one. The version is passed on the
+command line; the defaults in `app/build.gradle.kts` (1 / 1.0) are only for debug builds.
 
 ## How it is built
 

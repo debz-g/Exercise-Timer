@@ -14,6 +14,12 @@ val keystoreProperties = Properties().apply {
 }
 val hasReleaseKey = keystoreProperties.getProperty("storeFile") != null
 
+// The version comes from the command line so shipping an APK never needs a source edit:
+//   ./gradlew :app:releaseApk -PversionCode=2 -PversionName=1.1
+// The defaults are for debug builds only.
+val appVersionCode = providers.gradleProperty("versionCode").map { it.toIntOrNull() ?: error("versionCode must be a number, was '$it'") }.orNull ?: 1
+val appVersionName = providers.gradleProperty("versionName").orNull ?: "1.0"
+
 android {
     namespace = "com.exercise.timer"
     compileSdk {
@@ -25,8 +31,8 @@ android {
         // Obsidian's frosted glass needs Android 12.
         minSdk = 31
         targetSdk = 36
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = appVersionCode
+        versionName = appVersionName
     }
 
     signingConfigs {
@@ -110,3 +116,21 @@ val verifyDesignRules = tasks.register("verifyDesignRules") {
     }
 }
 tasks.named("check") { dependsOn(verifyDesignRules) }
+
+// One command for a shareable APK: build it signed and drop it in the project root as
+// ExerciseTimer-<version>.apk, which is where every copy handed to Dad has come from.
+// Not a Copy task: its destination directory would be the project root, which AGP already reads as an
+// output of its own tasks.
+val releaseApk = tasks.register("releaseApk") {
+    group = "build"
+    description = "Builds the release APK and copies it to the project root as ExerciseTimer-$appVersionName.apk"
+    val builtApk = layout.buildDirectory.dir("outputs/apk/release").get().asFile.resolve("app-release.apk")
+    val shareableApk = rootDir.resolve("ExerciseTimer-$appVersionName.apk")
+    dependsOn("assembleRelease")
+    inputs.file(builtApk)
+    outputs.file(shareableApk)
+    doLast {
+        builtApk.copyTo(shareableApk, overwrite = true)
+    }
+}
+

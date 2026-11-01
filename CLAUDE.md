@@ -24,6 +24,7 @@ plain wording.
 ./gradlew :app:verifyDesignRules         # fails on code that bypasses Obsidian (also runs in `check`)
 ./gradlew :app:installDebug              # install on the connected phone
 ./gradlew :app:assembleRelease           # R8-shrunk, release-signed APK -> app/build/outputs/apk/release/
+./gradlew :app:releaseApk -PversionCode=2 -PversionName=1.1   # release APK copied to the root for sharing
 ```
 
 adb lives in `~/Library/Android/sdk/platform-tools` (not on PATH by default).
@@ -119,4 +120,9 @@ The development phone is a Samsung S23 (One UI 9, Android 17), connected over US
   key when they're missing. Never commit either file. The same key must sign every version, or an update
   can't be installed over Dad's copy.
 - APKs are gitignored; a shareable copy is placed at the project root as `ExerciseTimer-<version>.apk`.
-- Bump `versionCode` / `versionName` in `app/build.gradle.kts` for each APK you share.
+- The version comes from the command line, not the build file:
+  `./gradlew :app:releaseApk -PversionCode=<n> -PversionName=<x.y>` builds the signed release APK and
+  copies it to the root as `ExerciseTimer-<x.y>.apk`. The defaults in `app/build.gradle.kts` (1 / 1.0) are
+  for debug builds only; never edit them to ship.
+- When asked for a release APK, reply with that command (next `versionCode` bumped, new `versionName`)
+  instead of running the build yourself — the owner runs it.
