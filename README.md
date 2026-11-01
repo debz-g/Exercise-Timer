@@ -12,8 +12,9 @@ timer runs, and "time to exercise" once a day.
 **Repeating interval timer**
 
 - Beep every 10 s, 20 s, 30 s or 1 min, or a custom interval from 1 s to 99:59.
-- A short double beep plus a matching vibration on every interval, on the alarm audio stream, so it is
-  still loud when the ringer is on silent.
+- One soft beep plus a matching vibration on every interval. The beep plays on the media stream, so the
+  phone's volume buttons set how loud it is; the buzz is tagged as an alarm, so it still fires when the
+  volume is turned down.
 - Keeps repeating until Stop is pressed. The countdown ring and the button stay on screen the whole time.
 - Optional **sleep timer** that ends the session by itself after 1 hour, with the remaining minutes shown
   in the UI — for when you fall asleep halfway through.

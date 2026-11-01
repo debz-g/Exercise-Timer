@@ -58,6 +58,13 @@ in as intents.
 - `TimerService` holds a partial wake lock (12 h safety cap) so beeps keep coming with the screen off.
 - The engine is tested with virtual time in `IntervalTimerEngineTest`. Run it after any change here.
 
+### Interval signal (`data/timer/ToneVibrationAlert.kt`, `SoftBeep.kt`)
+
+- One soft 660 Hz sine beep, synthesised in pure Kotlin and tested in `SoftBeepTest`. Keep it a single beep:
+  repeated beeps were found harsh.
+- The beep uses `USAGE_MEDIA` on purpose so the volume buttons control it. The vibration stays `USAGE_ALARM`
+  because Samsung mutes media vibration in silent mode; it's the only signal left when the volume is down.
+
 ## Design system: Obsidian
 
 The UI uses [Obsidian](https://github.com/Redfox-OSS/obsidian) (`dev.redfox:obsidian`), accent `Emerald`,
